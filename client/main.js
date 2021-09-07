@@ -44,19 +44,3 @@ categoryForm.addEventListener('submit', getFoodByCategory)
 
 
 
-// returning chicken so we can see what we should have
-// axios({
-//   method: "GET",
-//   url: "https://edamam-recipe-search.p.rapidapi.com/search",
-//   params: { q: "chicken" },
-//   headers: {
-//     "x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com",
-//     "x-rapidapi-key": "316c95ac9dmsh2e6c9f27f0f8e21p14db55jsn2379613b3fb3",
-//   },
-// })
-//   .then(function (response) {
-//     console.log(response.data);
-//   })
-//   .catch(function (error) {
-//     console.error(error);
-//   });

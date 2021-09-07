@@ -3,3 +3,4 @@ secrets.js
 .env
 .DS_Store
 .vscode
+config.js

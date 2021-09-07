@@ -12,29 +12,42 @@
     <header>
         <nav class="navbar">
             <ul class="navbar__list">
-            <li class="navbar__list-item"><a href=""></a></li>
-            <li class="navbar__list-item"><a href=""></a></li>
-            <li class="navbar__list-item"><a href=""></a></li>
-            <li class="navbar__list-item"><a href=""></a></li>
+            <li class="navbar__list-item"><a href="">Category</a></li>
+            <li class="navbar__list-item"><a href="">Keyword</a></li>
+            <li class="navbar__list-item"><a href="">Ingredients</a></li>
         </ul>
     </nav>
     </header>
     <main>
-        <h1>Cook your own food</h1>
+       
         <section class="section">
+            <h2>Search for recipes by Category</h2>
             <div class="container container-search-category">
-
+                <form class="category-form">
+                    <input type="text" class="category-search-input">
+                    <button class="category-button">Search</button>
+                </form>
             </div>
         </section>
         <section class="section">
+            <h2>Search for recipes by Keyword</h2>
+
             <div class="container container-search-keyword">
-
+                <form>
+                    <input type="text" class="keyword-search-input">
+                    <button class="keyword-button">Search</button>
+                </form>
             </div>
 
         </section>
         <section class="section">
+            <h2>Add a list of ingredients to search by</h2>
+
             <div class="container container-search-ingredients">
-                
+                <form>
+                   
+                </form>
+
             </div>
 
         </section>
@@ -45,7 +58,7 @@
 
 
 
-
-    <script src="./main.js"></script>
+    <script src="config.js" type="module"></script>
+    <script src="main.js" type="module"></script>
 </body>
 </html>

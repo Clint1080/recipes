@@ -109,8 +109,12 @@ const getFoodByCategory = (e) => {
     },
   })
     .then(function (response) {
-      // console.log(response.data);
+    // Here we are clearing out the container so that new recipes can be displayed
       let recipes = [...response.data.hits];
+              const recipesContainer = document.querySelector(
+                ".container-search-category"
+              );
+              recipesContainer.innerHTML = "";
       recipes.map((recipe) => {
         let ingredients = recipe.recipe.ingredients;
         return createRecipeCard(

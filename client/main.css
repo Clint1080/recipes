@@ -74,11 +74,21 @@ select {
   }
 }
 /* resets above */
- h1 {
-     text-align: center;
-     padding: 1rem 0;
- }
-h2 {
+:root{
+    --rich-black-fogra-29: #001524ff;
+    --ming: #15616dff;
+    --rose-madder: #db2b39ff;
+    --marigold: #f3a712ff;
+    --deep-champagne: #f0cea0ff;
+    --light-text: #ffffff;
+}
+
+
+h1 {
+    text-align: center;
+    padding: 2rem 0;
+}
+h2, h3 {
     padding: 1rem;
 }
 
@@ -87,11 +97,14 @@ header {
     flex-direction: row;
     justify-content: center;
     border-bottom: 1px solid #000;
+    background-color: var(--rich-black-fogra-29);
+    color: var(--light-text);
 }
 
 main {
     display: flex;
     flex-direction: column;
+    min-height: 86vh;
 }
 
 section {
@@ -100,17 +113,21 @@ section {
     flex-direction: column;
     align-items: center;
 }
+.container {
+    
+}
 .container-search-category {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding-left: 2rem 0;
 
 }
 
 .container-search-category > * {
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     width: 100%;
     max-width: 25rem;
  
@@ -120,9 +137,45 @@ section {
 }
 .recipe-card {
    align-items: center;
-   padding: 1rem;
+   margin: 1rem 0;
+   background-color: var(--ming);
+    border-radius: 15px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.recipe-card ul{
+    list-style: none;
+    padding: 0 1.5rem;
+}
+.recipe-card h2 {
+    color: var(--deep-champagne)
+}
+.recipe-card li {
+    color: var(--deep-champagne)
+}
+section:nth-child(2) {
+    border-top: 1px solid #000;
 }
 
-ul{
-    list-style: none;
+.save__button, .delete__button {
+    width: 100%;
+    /* border-radius: 5%; */
+    background-color: var(--rose-madder);
+    color: var(--light-text);
+    border: none;
+    padding: 1rem 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 26px;
+    font-weight: bold;
+
+}
+footer {
+    text-align: center;
+    background-color: var(--rich-black-fogra-29);
+    color: var(--light-text);
+}
+.dylan {
+    font-size: 9px;
 }

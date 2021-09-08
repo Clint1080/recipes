@@ -51,6 +51,7 @@ const savedRecipeCard = (ingredientArr, name, recipe) => {
     })
     .join("");
   const deleteButton = document.createElement("button");
+  deleteButton.classList.add('delete__button')
   deleteButton.innerHTML = "Delete";
   deleteButton.addEventListener("click", () => {
     deleteRecipe(name);

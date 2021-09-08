@@ -1,11 +1,8 @@
 import { APIKEY } from './config.js'
 
-const searchByCategoryContainer = document.querySelector("#container-search-category")
-// const categoryInput = document.querySelector(".category-search-input")
 const categoryForm = document.querySelector(".category-form")
 const categoryButton = document.querySelector(".category-button")
 
-const searcByKeywordContainer = document.querySelector("#container-search-keyword")
 const keywordInput = document.querySelector(".keyword-search-input")
 const keywordButton = document.querySelector(".keyword-button")
 
@@ -15,9 +12,24 @@ const searchByIngredientsContainer = document.querySelector("#container-search-i
 // Category search
 const getFoodByCategory = (e) => {
     e.preventDefault()
-    console.log('hit get food by category')
+    
     let categories = document.querySelector(".category-search-input").value;
-    // console.log(categories)
+
+    const createRecipeCard = ( ingredientArr, name ) => {
+        const searchByCategoryContainer = document.querySelector(".container-search-category");
+        const newRecipeCard = document.createElement("div");
+        const newRecipeList = document.createElement('ul');
+        const newRecipeCardName = document.createElement("h2");
+
+        newRecipeCardName.textContent = name
+        newRecipeList.innerHTML = ingredientArr.map((ingredient) => {
+            return `<li class="ingredient">${ingredient.text}</li>`
+        }).join('')
+        
+        searchByCategoryContainer.appendChild(newRecipeCard)
+        newRecipeCard.appendChild(newRecipeCardName)
+        newRecipeCard.appendChild(newRecipeList)
+    }
     axios({
         method: "GET",
         url: "https://edamam-recipe-search.p.rapidapi.com/search",
@@ -28,16 +40,19 @@ const getFoodByCategory = (e) => {
         },
     })
     .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
+        let recipes = [...response.data.hits]
+        recipes.map((recipe) => {
+            let ingredients = recipe.recipe.ingredients
+            return createRecipeCard(ingredients, recipe.recipe.label)
+        })
+
     })
     .catch(function (error) {
         console.error(error);
     });
 }
 
-// function submitHandler(e) {
-//     e.preventDefault()
-// }
 
 
 categoryForm.addEventListener('submit', getFoodByCategory)

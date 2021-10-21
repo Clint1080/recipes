@@ -74,6 +74,15 @@ select {
   }
 }
 /* resets above */
+
+
+/*Use these colors*/
+/* --pewter-blue: #88a2aaff;
+--grullo: #ada296ff;
+--middle-red: #e2856eff;
+--scarlet: #f42c04ff;
+--rich-black-fogra-29: #0f1a20ff; */
+
 :root{
     --rich-black-fogra-29: #001524ff;
     --ming: #15616dff;
